@@ -28,7 +28,7 @@
 <meta property="og:description" content="這裡主要紀錄一些學習筆記與小技巧，包含網站開發、Android、SQL等各種工作上遇到的問題與解決方案。甚至還包含了遊戲攻略，除了可以方便自己日後查閱外，也希望可以幫助到各位。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2020-10-13T01:59:42.000Z">
-<meta property="article:modified_time" content="2020-10-13T03:13:13.597Z">
+<meta property="article:modified_time" content="2020-10-13T06:07:20.473Z">
 <meta property="article:author" content="Mike Chen">
 <meta property="article:tag" content="酷壽司,kusos,程式開發,遊戲攻略">
 <meta name="twitter:card" content="summary">
@@ -128,17 +128,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類<span class="badge">3</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔<span class="badge">18</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -350,7 +350,7 @@
   &copy; 
   <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fab fa-github"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mike Chen</span>
     <span class="post-meta-divider">|</span>
@@ -364,8 +364,6 @@
     </span>
     <span title="所需總閱讀時間">1:38</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
-  </div>
 
         
 
@@ -482,6 +480,17 @@ window.addEventListener('pjax:success', () => {
   
 
   
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mikechen2018.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
 
     </div>
 </body>
