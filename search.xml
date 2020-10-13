@@ -417,28 +417,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C# WPF 從 Resources 另存檔案</title>
-    <url>/2020/08/11/2020-08-11-csharp-wpf-copy-file-from-resource/</url>
-    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li>白板專案上有個功能，是要從 Resources 複製一初始圖片檔案另存。</li>
-</ul>
-<p><img src="https://i.imgur.com/SkubYQj.png" alt="Resources 中的圖片"></p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
-<li>利用 <code>Properties.Resources.Whiteboard</code> 找到該資源，圖片型別為 <code>System.Drawing.Bitmap</code>。</li>
-<li>使用 <code>File.WriteAllBytes</code> 存檔，第一個參數是存檔路徑，第二個參數是資料來源，型別為 <code>byte[]</code>。所以需要另外寫一個函式 <code>BitmapToBytes</code> 做轉換。</li>
-</ul>
-<p><img src="https://i.imgur.com/jcadM4Z.png" alt="File.WriteAllBytes說明"></p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//我的文件夾下以專案 Title 建立的資料夾</span></span><br><span class="line"><span class="keyword">string</span> SaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + <span class="string">&quot;\\&quot;</span> + <span class="keyword">this</span>.Title + <span class="string">&quot;\\&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//確保該目錄存在</span></span><br><span class="line"><span class="keyword">if</span> (Directory.Exists(SaveFolder) == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123; Directory.CreateDirectory(SaveFolder); &#125;</span><br><span class="line">                <span class="keyword">catch</span> &#123; &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//將資源圖片另存</span></span><br><span class="line">File.WriteAllBytes(SaveFolder + <span class="string">&quot;Whiteboard.jpg&quot;</span>, BitmapToBytes(Properties.Resources.Whiteboard));</span><br><span class="line"></span><br><span class="line"><span class="comment">//型別轉換</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] <span class="title">BitmapToBytes</span>(<span class="params">System.Drawing.Bitmap Bitmap</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MemoryStream ms = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                ms = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">                Bitmap.Save(ms, Bitmap.RawFormat);</span><br><span class="line">                <span class="keyword">byte</span>[] byteImage = <span class="keyword">new</span> Byte[ms.Length];</span><br><span class="line">                byteImage = ms.ToArray();</span><br><span class="line">                <span class="keyword">return</span> byteImage;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (ArgumentNullException ex)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">throw</span> ex;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">finally</span></span><br><span class="line">            &#123;</span><br><span class="line">                ms.Close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Work</category>
-      </categories>
-      <tags>
-        <tag>C-Sharp</tag>
-        <tag>WPF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C# 更改專案名稱與組件名稱後，工作列上的應用程式名稱沒變</title>
     <url>/2020/08/13/2020-08-13-csharp-taskbar-appname-different/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
@@ -473,6 +451,28 @@
       <tags>
         <tag>C-Sharp</tag>
         <tag>FriendlyAppName</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C# WPF 從 Resources 另存檔案</title>
+    <url>/2020/08/11/2020-08-11-csharp-wpf-copy-file-from-resource/</url>
+    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
+<li>白板專案上有個功能，是要從 Resources 複製一初始圖片檔案另存。</li>
+</ul>
+<p><img src="https://i.imgur.com/SkubYQj.png" alt="Resources 中的圖片"></p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ul>
+<li>利用 <code>Properties.Resources.Whiteboard</code> 找到該資源，圖片型別為 <code>System.Drawing.Bitmap</code>。</li>
+<li>使用 <code>File.WriteAllBytes</code> 存檔，第一個參數是存檔路徑，第二個參數是資料來源，型別為 <code>byte[]</code>。所以需要另外寫一個函式 <code>BitmapToBytes</code> 做轉換。</li>
+</ul>
+<p><img src="https://i.imgur.com/jcadM4Z.png" alt="File.WriteAllBytes說明"></p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//我的文件夾下以專案 Title 建立的資料夾</span></span><br><span class="line"><span class="keyword">string</span> SaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + <span class="string">&quot;\\&quot;</span> + <span class="keyword">this</span>.Title + <span class="string">&quot;\\&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//確保該目錄存在</span></span><br><span class="line"><span class="keyword">if</span> (Directory.Exists(SaveFolder) == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123; Directory.CreateDirectory(SaveFolder); &#125;</span><br><span class="line">                <span class="keyword">catch</span> &#123; &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//將資源圖片另存</span></span><br><span class="line">File.WriteAllBytes(SaveFolder + <span class="string">&quot;Whiteboard.jpg&quot;</span>, BitmapToBytes(Properties.Resources.Whiteboard));</span><br><span class="line"></span><br><span class="line"><span class="comment">//型別轉換</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] <span class="title">BitmapToBytes</span>(<span class="params">System.Drawing.Bitmap Bitmap</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MemoryStream ms = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                ms = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">                Bitmap.Save(ms, Bitmap.RawFormat);</span><br><span class="line">                <span class="keyword">byte</span>[] byteImage = <span class="keyword">new</span> Byte[ms.Length];</span><br><span class="line">                byteImage = ms.ToArray();</span><br><span class="line">                <span class="keyword">return</span> byteImage;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (ArgumentNullException ex)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">throw</span> ex;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">finally</span></span><br><span class="line">            &#123;</span><br><span class="line">                ms.Close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Work</category>
+      </categories>
+      <tags>
+        <tag>C-Sharp</tag>
+        <tag>WPF</tag>
       </tags>
   </entry>
   <entry>
