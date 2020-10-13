@@ -301,7 +301,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-10-13 11:14:11" itemprop="dateModified" datetime="2020-10-13T11:14:11+08:00">2020-10-13</time>
+                <time title="修改時間：2020-10-13 11:17:22" itemprop="dateModified" datetime="2020-10-13T11:17:22+08:00">2020-10-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,48 +336,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li><p>以往專案上以 Node.js 當 Server 的項目，大多搭配 MongoDB 使用，這裡紀錄一下從安裝到使用的筆記。</p>
-</li>
-<li><p>標題的 CRUD 是 新增（Create，意為「建立」）、查詢（Read，意為「讀取」）、修改（Update，意為「更新」）、刪除（Delete），取四個單字字首而成。</p>
-</li>
-</ul>
-<h2 id="MongoDB-安裝與配置設定"><a href="#MongoDB-安裝與配置設定" class="headerlink" title="MongoDB 安裝與配置設定"></a>MongoDB 安裝與配置設定</h2><ul>
-<li><p>安裝基本上就是一直下一步的無腦安裝，下面列了兩個載點。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-4.4.0-signed.msi">Win10版本適用載點</a>、<a target="_blank" rel="noopener" href="https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2008plus-3.4.24-signed.msi">Win8版本適用載點</a></p>
-</li>
-<li><p>加入環境變數 <code>;C:\Program Files\MongoDB\Server\3.4\bin</code><br><img src="https://i.imgur.com/eyAUVOL.png" alt="加入環境變數"></p>
-</li>
-<li><p>建立資料庫目錄 <code>d:\MongoDB\data\db</code></p>
-</li>
-<li><p>建立log目錄<code>d:\MongoDB\data\log</code></p>
-</li>
-<li><p>啟動同時，指定資料庫存放位置！ <code>mongod --dbpath d:\MongoDB\data\db</code></p>
-</li>
-<li><p>建立設定檔 mongod.cfg，內容如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemLog:</span><br><span class="line">    destination: file</span><br><span class="line">    path: d:\MongoDB\data\log\mongod.log</span><br><span class="line">storage:</span><br><span class="line">    dbPath: d:\MongoDB\data\db</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安裝設定檔 mongod.cfg，日後啟動服務就不需要再次指定路徑。<br><code>mongod --config &quot;D:\MongoDB\data\mongod.cfg&quot; --install</code></p>
-</li>
-<li><p>啟用服務：<code>net start MongoDB</code></p>
-</li>
-<li><p>停用服務：<code>net stop MongoDB</code></p>
-</li>
-</ul>
-<h2 id="MongoDB-可視化工具-GUI"><a href="#MongoDB-可視化工具-GUI" class="headerlink" title="MongoDB 可視化工具 (GUI)"></a>MongoDB 可視化工具 (GUI)</h2><p><img src="https://i.imgur.com/tEgdECM.png" alt="Robo 3T 介面"></p>
-<p><a target="_blank" rel="noopener" href="https://download.studio3t.com/robomongo/windows/robo3t-1.3.1-windows-x86_64-7419c406.zip">Robo 3T 載點</a></p>
-<h2 id="MongoDB-Shell-基本用法"><a href="#MongoDB-Shell-基本用法" class="headerlink" title="MongoDB Shell 基本用法"></a>MongoDB Shell 基本用法</h2><p><img src="https://i.imgur.com/dwaN9sn.png" alt="MongoDB Shell 基本用法"></p>
-<h2 id="Node-js-安裝-MongoDB-driver"><a href="#Node-js-安裝-MongoDB-driver" class="headerlink" title="Node.js 安裝 MongoDB driver"></a>Node.js 安裝 MongoDB driver</h2><ul>
-<li>需注意安裝本文範例語法適用的版本，保險起見就像我一樣指定版本安裝。<br><code>npm install mongodb@2.2.31 --save</code><br><img src="https://i.imgur.com/cWBAwPT.png" alt="package.json"></li>
-</ul>
-<h2 id="新增-Create"><a href="#新增-Create" class="headerlink" title="新增 (Create)"></a>新增 (Create)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">&#x27;mongodb&#x27;</span>).MongoClient;</span><br><span class="line"></span><br><span class="line">MongoClient.connect(<span class="string">&quot;mongodb://localhost:27017/mymondb&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  db.collection(<span class="string">&#x27;Superstar&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, collection</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">    <span class="comment">//collection.insert(新增內容)</span></span><br><span class="line">    collection.insert(&#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">firstName</span>: <span class="string">&#x27;Mike&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Chen&#x27;</span> &#125;);</span><br><span class="line">    collection.insert(&#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">firstName</span>: <span class="string">&#x27;Nicole&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Lo&#x27;</span> &#125;);</span><br><span class="line">    collection.insert(&#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">firstName</span>: <span class="string">&#x27;Bill&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Gates&#x27;</span> &#125;);</span><br><span class="line"></span><br><span class="line">    collection.count(<span class="function"><span class="keyword">function</span> (<span class="params">err, count</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;共 &#x27;</span> + count + <span class="string">&#x27; 筆資料&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  db.close(); <span class="comment">//關閉連線</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="查詢-Read"><a href="#查詢-Read" class="headerlink" title="查詢 (Read)"></a>查詢 (Read)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">&#x27;mongodb&#x27;</span>).MongoClient;</span><br><span class="line"></span><br><span class="line">MongoClient.connect(<span class="string">&quot;mongodb://localhost:27017/mymondb&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, db</span>) </span>&#123;</span><br><span class="line">  db.collection(<span class="string">&quot;Superstar&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, collection</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//collection.find(條件,callback)</span></span><br><span class="line">    collection.find(&#123; <span class="attr">firstName</span>: <span class="string">&quot;Nicole&quot;</span> &#125;).toArray(<span class="function"><span class="keyword">function</span> (<span class="params">err, items</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">      <span class="built_in">console</span>.log(items);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&quot;查詢到 &quot;</span> + items.length + <span class="string">&quot; 個符合條件);</span></span><br><span class="line"><span class="string">    &#125;);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">  &#125;);</span></span><br><span class="line"><span class="string">  db.close(); //關閉連線</span></span><br><span class="line"><span class="string">&#125;);</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="修改-Update"><a href="#修改-Update" class="headerlink" title="修改 (Update)"></a>修改 (Update)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">&#x27;mongodb&#x27;</span>).MongoClient;</span><br><span class="line"></span><br><span class="line">MongoClient.connect(<span class="string">&quot;mongodb://localhost:27017/mymondb&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  db.collection(<span class="string">&#x27;Superstar&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, collection</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//collection.update(條件,更新內容,writeConcern,callback)</span></span><br><span class="line">    collection.update(&#123; <span class="attr">id</span>: <span class="number">3</span> &#125;, &#123; <span class="attr">$set</span>: &#123; <span class="attr">firstName</span>: <span class="string">&#x27;Steve&#x27;</span>, <span class="attr">lastName</span>: <span class="string">&#x27;Jobs&#x27;</span> &#125; &#125;,</span><br><span class="line">      &#123; <span class="attr">w</span>: <span class="number">1</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;更新成功！&#x27;</span>);</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  db.close(); <span class="comment">//關閉連線</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-<h2 id="刪除-Delete"><a href="#刪除-Delete" class="headerlink" title="刪除 (Delete)"></a>刪除 (Delete)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">&#x27;mongodb&#x27;</span>).MongoClient;</span><br><span class="line"></span><br><span class="line">MongoClient.connect(<span class="string">&quot;mongodb://localhost:27017/mymondb&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">  db.collection(<span class="string">&#x27;Superstar&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, collection</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//collection.remove(條件,writeConcern,callback)</span></span><br><span class="line">    collection.remove(&#123; <span class="attr">id</span>: <span class="number">2</span> &#125;, &#123; <span class="attr">w</span>: <span class="number">1</span> &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">err, result</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">&#x27;刪除成功！&#x27;</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">  db.close(); <span class="comment">//關閉連線</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+          <p>以往專案上以 Node.js 當 Server 的項目，大多搭配 MongoDB 使用，這裡紀錄一下從安裝到使用的筆記。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/01/2020-09-01-javascript-mongodb-crud/">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -427,7 +394,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-09-01 09:56:29" itemprop="dateModified" datetime="2020-09-01T09:56:29+08:00">2020-09-01</time>
+                <time title="修改時間：2020-10-13 11:18:44" itemprop="dateModified" datetime="2020-10-13T11:18:44+08:00">2020-10-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -462,32 +429,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li><p>這是一個偶然發現的問題，身為工程師時常會開些小專案來試做，例如建一個叫 SampleAAA 的專案，其預設組件名稱/應用程式名稱也會叫做 SampleAAA，編譯後產生的執行檔也會叫 SampleAAA.exe。</p>
-</li>
-<li><p>當這個小專案測試沒問題，可能會想直接變更成正式專案，會考慮直接修改他的專案名稱、組件名稱、命名空間名稱，例如改叫 SampleBBB 好了。(其實蠻多地方需要修改的，這邊只列舉部分)</p>
-</li>
-<li><p>都改好後，清空 Debug 資料夾後，重新進行編譯，理所當然會產生 SampleBBB.exe，到這也沒問題。</p>
-</li>
-<li><p>發生問題的是，從 Debug 目錄下直接雙擊 SampleBBB.exe 後，又偶然在工作列(Taskbar)上對它的圖示點了右鍵，發現名稱還是原本的 SampleAAA，如下圖。</p>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/HOuA0zx.png" alt="名稱還是舊的"></p>
-<ul>
-<li>這讓我下意識的想到去搜尋看看登錄檔 ( 執行 &gt; 輸入<code>regedit</code> &gt; 搜尋 <code>SampleAAA</code>)，果然在 <code>HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\Shell\MuiCache</code> 下發現了一個有趣的東西 <code>FriendlyAppName</code> (友善的應用程式名稱？)。</li>
-</ul>
-<p><img src="https://i.imgur.com/35WmL1R.png" alt="FriendlyAppName"></p>
-<ul>
-<li>看來是微軟在初次運行執行檔的時候會記錄這個屬性，就算重新編譯，只要是路徑相同，都還是會保持原本的值。</li>
-</ul>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><ul>
-<li><p>解決方法就是直接刪除這個機碼就可以了。</p>
-</li>
-<li><p>另外，其實如果把整個 Debug 資料夾搬到其他地方去執行，並不會有這問題，因為路徑不同。</p>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/wsh3aAD.png" alt="刪除就解決了"></p>
-
+          <p>這是一個偶然發現的問題，更改專案名稱與組件名稱後，工作列上的應用程式名稱竟然沒變！</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/08/13/2020-08-13-csharp-taskbar-appname-different/">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -905,6 +855,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020/07/23/2020-07-23-csharp-cmd-restart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mike Chen">
+      <meta itemprop="description" content="在此紀錄我所學到的東西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="酷壽司的窩">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/23/2020-07-23-csharp-cmd-restart/" class="post-title-link" itemprop="url">C# 利用 cmd 重新啟動</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-07-23 10:37:19" itemprop="dateCreated datePublished" datetime="2020-07-23T10:37:19+08:00">2020-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-07-22 13:37:17" itemprop="dateModified" datetime="2020-07-22T13:37:17+08:00">2020-07-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index"><span itemprop="name">Work</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>454</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
+<li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
+</ul>
+<h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020/07/23/2020-07-23-csharp-get-post-json-param-node/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -986,94 +1024,6 @@
 
 <h2 id="Node-js-端"><a href="#Node-js-端" class="headerlink" title="Node.js 端"></a>Node.js 端</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 application/json parser</span></span><br><span class="line"><span class="keyword">var</span> jsonParser = bodyParser.json();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 application/x-www-form-urlencoded parser</span></span><br><span class="line"><span class="keyword">var</span> urlencodedParser = bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//GET 接受參數，使用 req.query.xxx</span></span><br><span class="line">app.get(<span class="string">&#x27;/checkGet&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.query.name, req.query.pw);</span><br><span class="line"></span><br><span class="line">  res.send(<span class="string">&quot;收到 GET 資料啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以 JSON 傳來的用 jsonParser</span></span><br><span class="line">app.post(<span class="string">&#x27;/checkJson&#x27;</span>, jsonParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.body.name, req.body.pw);</span><br><span class="line">  res.send(<span class="string">&quot;收到 POST 來的 JSON 啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以 x-www-form-urlencoded 傳來的用 urlencodedParser</span></span><br><span class="line">app.post(<span class="string">&#x27;/checkParam&#x27;</span>, urlencodedParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.body.name, req.body.pw);</span><br><span class="line">  res.send(<span class="string">&quot;收到 POST 來的 x-www-form-urlencoded 啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</span><br><span class="line"></span><br><span class="line">server.listen(port, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Express started on http://localhost:&#x27;</span> + port + <span class="string">&#x27; \r\npress Ctrl+C to terminate.&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020/07/23/2020-07-23-csharp-cmd-restart/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Mike Chen">
-      <meta itemprop="description" content="在此紀錄我所學到的東西">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酷壽司的窩">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/23/2020-07-23-csharp-cmd-restart/" class="post-title-link" itemprop="url">C# 利用 cmd 重新啟動</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-07-23 10:37:19" itemprop="dateCreated datePublished" datetime="2020-07-23T10:37:19+08:00">2020-07-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-07-22 13:37:17" itemprop="dateModified" datetime="2020-07-22T13:37:17+08:00">2020-07-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index"><span itemprop="name">Work</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>454</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
-</ul>
-<h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
