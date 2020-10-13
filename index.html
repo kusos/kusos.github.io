@@ -293,10 +293,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">發表於</span>
-              
 
-              <time title="創建時間：2020-09-01 10:37:19 / 修改時間：13:59:32" itemprop="dateCreated datePublished" datetime="2020-09-01T10:37:19+08:00">2020-09-01</time>
+              <time title="創建時間：2020-09-01 10:37:19" itemprop="dateCreated datePublished" datetime="2020-09-01T10:37:19+08:00">2020-09-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-10-13 11:14:11" itemprop="dateModified" datetime="2020-10-13T11:14:11+08:00">2020-10-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -899,94 +905,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020/07/23/2020-07-23-csharp-cmd-restart/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Mike Chen">
-      <meta itemprop="description" content="在此紀錄我所學到的東西">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="酷壽司的窩">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/07/23/2020-07-23-csharp-cmd-restart/" class="post-title-link" itemprop="url">C# 利用 cmd 重新啟動</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-07-23 10:37:19" itemprop="dateCreated datePublished" datetime="2020-07-23T10:37:19+08:00">2020-07-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2020-07-22 13:37:17" itemprop="dateModified" datetime="2020-07-22T13:37:17+08:00">2020-07-22</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分類於</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index"><span itemprop="name">Work</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span>454</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span>1 分鐘</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
-</ul>
-<h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020/07/23/2020-07-23-csharp-get-post-json-param-node/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1068,6 +986,94 @@
 
 <h2 id="Node-js-端"><a href="#Node-js-端" class="headerlink" title="Node.js 端"></a>Node.js 端</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 application/json parser</span></span><br><span class="line"><span class="keyword">var</span> jsonParser = bodyParser.json();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 application/x-www-form-urlencoded parser</span></span><br><span class="line"><span class="keyword">var</span> urlencodedParser = bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//GET 接受參數，使用 req.query.xxx</span></span><br><span class="line">app.get(<span class="string">&#x27;/checkGet&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.query.name, req.query.pw);</span><br><span class="line"></span><br><span class="line">  res.send(<span class="string">&quot;收到 GET 資料啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以 JSON 傳來的用 jsonParser</span></span><br><span class="line">app.post(<span class="string">&#x27;/checkJson&#x27;</span>, jsonParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.body.name, req.body.pw);</span><br><span class="line">  res.send(<span class="string">&quot;收到 POST 來的 JSON 啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以 x-www-form-urlencoded 傳來的用 urlencodedParser</span></span><br><span class="line">app.post(<span class="string">&#x27;/checkParam&#x27;</span>, urlencodedParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.body.name, req.body.pw);</span><br><span class="line">  res.send(<span class="string">&quot;收到 POST 來的 x-www-form-urlencoded 啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</span><br><span class="line"></span><br><span class="line">server.listen(port, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Express started on http://localhost:&#x27;</span> + port + <span class="string">&#x27; \r\npress Ctrl+C to terminate.&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020/07/23/2020-07-23-csharp-cmd-restart/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Mike Chen">
+      <meta itemprop="description" content="在此紀錄我所學到的東西">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="酷壽司的窩">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/23/2020-07-23-csharp-cmd-restart/" class="post-title-link" itemprop="url">C# 利用 cmd 重新啟動</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-07-23 10:37:19" itemprop="dateCreated datePublished" datetime="2020-07-23T10:37:19+08:00">2020-07-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2020-07-22 13:37:17" itemprop="dateModified" datetime="2020-07-22T13:37:17+08:00">2020-07-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index"><span itemprop="name">Work</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>454</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
+<li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
+</ul>
+<h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 

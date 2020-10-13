@@ -275,21 +275,6 @@
       </tags>
   </entry>
   <entry>
-    <title>C# 利用 cmd 重新啟動</title>
-    <url>/2020/07/23/2020-07-23-csharp-cmd-restart/</url>
-    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
-</ul>
-<h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Work</category>
-      </categories>
-      <tags>
-        <tag>C-Sharp</tag>
-        <tag>CMD</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>C# GET/POST JSON/Param to Node.js</title>
     <url>/2020/07/23/2020-07-23-csharp-get-post-json-param-node/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
@@ -317,6 +302,21 @@
         <tag>POST</tag>
         <tag>JSON</tag>
         <tag>Param</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>C# 利用 cmd 重新啟動</title>
+    <url>/2020/07/23/2020-07-23-csharp-cmd-restart/</url>
+    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
+<li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
+</ul>
+<h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Work</category>
+      </categories>
+      <tags>
+        <tag>C-Sharp</tag>
+        <tag>CMD</tag>
       </tags>
   </entry>
   <entry>

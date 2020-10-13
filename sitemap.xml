@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://kusos.github.io/2020/09/01/2020-09-01-javascript-mongodb-crud/</loc>
+    
+    <lastmod>2020-10-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://kusos.github.io/categories/index.html</loc>
     
     <lastmod>2020-10-13</lastmod>
@@ -59,13 +66,6 @@
   
   <url>
     <loc>https://kusos.github.io/2020/02/12/2020-02-12-javascript-maskmap/</loc>
-    
-    <lastmod>2020-09-01</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://kusos.github.io/2020/09/01/2020-09-01-javascript-mongodb-crud/</loc>
     
     <lastmod>2020-09-01</lastmod>
     
@@ -291,13 +291,6 @@
   </url>
   
   <url>
-    <loc>https://kusos.github.io/tags/CMD/</loc>
-    <lastmod>2020-10-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://kusos.github.io/tags/GET/</loc>
     <lastmod>2020-10-13</lastmod>
     <changefreq>daily</changefreq>
@@ -320,6 +313,13 @@
   
   <url>
     <loc>https://kusos.github.io/tags/Param/</loc>
+    <lastmod>2020-10-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kusos.github.io/tags/CMD/</loc>
     <lastmod>2020-10-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
