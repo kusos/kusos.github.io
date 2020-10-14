@@ -1271,7 +1271,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #49f987;
+  background: #52812b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1514,7 +1514,7 @@ pre .javascript .function {
   width: 100%;
 }
 .with-love {
-  color: #666;
+  color: #fff;
   display: inline-block;
   margin: 0 5px;
   animation: iconAnimate 1.33s ease-in-out infinite;
@@ -2767,6 +2767,26 @@ body {
   background-size: cover;
   background-position: 50% 50%;
 }
-.content-wrap > div > article {
-  opacity: 0.9 !important;
+.post-body p a {
+  color: #04f;
+  border-bottom: none;
+  border-bottom: 1px solid #04f;
+}
+.post-body p a:hover {
+  color: #f60;
+  border-bottom: none;
+  border-bottom: 1px solid #f60;
+}
+.post-block {
+  background: rgba(252,252,252,0.9);
+}
+code {
+  color: #23fc93;
+  background: #333;
+}
+h2 {
+  color: #f60;
+}
+.footer {
+  color: #fff;
 }
