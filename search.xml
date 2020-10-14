@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>自製口罩地圖</title>
-    <url>/2020/02/12/2020-02-12-javascript-maskmap/</url>
+    <url>/2020-02-12-javascript-maskmap/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>武漢肺炎/新冠狀病毒(COVID-19)全球肆虐，人人都需要口罩。</li>
 <li>身為攻城獅/碼農，跟風自己寫一個口罩地圖方便買口罩是一定要的啦！</li>
@@ -26,7 +26,7 @@
   </entry>
   <entry>
     <title>C# 漢語拼音轉換</title>
-    <url>/2020/03/30/2020-03-30-csharp-pinyin/</url>
+    <url>/2020-03-30-csharp-pinyin/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>老婆大人工作上需要大量轉換漢字為拼音，按照他們的工作SOP需要一個一個字去查詢。</li>
 <li>身為工程師怎可以讓老婆浪費時間去做這種事情呢？當然是希望全部複製貼上後就搞定啦！</li>
@@ -51,7 +51,7 @@
   </entry>
   <entry>
     <title>KiKiStore - 線上購物平台</title>
-    <url>/2020/05/18/2020-05-18-javascript-kikistore-shopping-system/</url>
+    <url>/2020-05-18-javascript-kikistore-shopping-system/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>朋友的副業需要線上購物平台，委託我幫他構想與實作。</li>
 <li>開發期能省則省，先使用 Heroku 當主機，資料庫也先使用 Firebase 的免費方案。</li>
@@ -82,7 +82,7 @@
   </entry>
   <entry>
     <title>把拔！讓大家看看我們的武魂融合技</title>
-    <url>/2020/05/20/2020-05-20-baby-escaroo/</url>
+    <url>/2020-05-20-baby-escaroo/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>某日，我正趴在客廳看電視，寶貝兒子突然爬到我背上，做了這個姿勢。<br>老婆覺得有趣，立馬就拍了下來。<br>搭配最近追的動畫，就變成了武魂融合技 - 蝸牛戰車 ！！！</p>
 <p><img src="https://i.imgur.com/d7LmMFE.gif" alt="武魂融合技 - 蝸牛戰車"></p>
 <h2 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h2><ul>
@@ -98,7 +98,7 @@
   </entry>
   <entry>
     <title>來來來！哩來！老爸念書給你聽！</title>
-    <url>/2020/06/21/2020-06-21-baby-read-book/</url>
+    <url>/2020-06-21-baby-read-book/</url>
     <content><![CDATA[<h2 id="研究指出"><a href="#研究指出" class="headerlink" title="研究指出"></a>研究指出</h2><ul>
 <li>爸爸陪孩子閱讀比媽媽效果更好</li>
 <li>父親閱讀對男孩子更有益處</li>
@@ -124,7 +124,7 @@
   </entry>
   <entry>
     <title>EJ2 Animation</title>
-    <url>/2020/07/13/2020-07-13-javascript-ejs-animation/</url>
+    <url>/2020-07-13-javascript-ejs-animation/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>網頁專案有動畫需求，找到了這個，將所有用法做了整理。</li>
 <li>不錯用的動畫套件，用法也很直覺，但有點肥。</li>
@@ -152,7 +152,7 @@
   </entry>
   <entry>
     <title>C# AmTools 視訊會議帳號管理軟件優化</title>
-    <url>/2020/07/17/2020-07-17-csharp-winform-amtools/</url>
+    <url>/2020-07-17-csharp-winform-amtools/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>業務通知電子白板一體機又賣出一台了，需要請我幫忙新增視訊會議系統 VRC 的帳號。</li>
 <li>VRC 是我們單位自主研發的視訊會議系統，帳號可以單獨購買，或是購買電子白板就會附軟體和一年期帳號，整個次集團皆有採用。</li>
@@ -214,7 +214,7 @@
   </entry>
   <entry>
     <title>C# WPF的滑鼠、觸控事件偵測和自訂縮小放大關閉等按鈕</title>
-    <url>/2020/07/20/2020-07-20-csharp-wpf-mouse-touch-event/</url>
+    <url>/2020-07-20-csharp-wpf-mouse-touch-event/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>最近電子白板出現了一個 BUG，為了判別是滑鼠/觸控造成的，需要程式來偵測滑鼠與觸控事件。</li>
 <li>目標是偵測視窗右上角的放大、縮小、關閉等按鈕的所有事件。</li>
@@ -242,7 +242,7 @@
   </entry>
   <entry>
     <title>廣告機-高雄軟體園區樓層簡介專案</title>
-    <url>/2020/07/22/2020-07-22-javascript-kiosk-kaohsiung-software-park-floor-intro/</url>
+    <url>/2020-07-22-javascript-kiosk-kaohsiung-software-park-floor-intro/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>業務說高軟管委會預計購買三台廣告機，內容主要放ABC棟的樓層簡介，讓我規畫一個Sample出來提案。</li>
 </ul>
@@ -276,7 +276,7 @@
   </entry>
   <entry>
     <title>C# 利用 cmd 重新啟動</title>
-    <url>/2020/07/23/2020-07-23-csharp-cmd-restart/</url>
+    <url>/2020-07-23-csharp-cmd-restart/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
 </ul>
@@ -291,7 +291,7 @@
   </entry>
   <entry>
     <title>C# GET/POST JSON/Param to Node.js</title>
-    <url>/2020/07/23/2020-07-23-csharp-get-post-json-param-node/</url>
+    <url>/2020-07-23-csharp-get-post-json-param-node/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>目前專案上的架構是 WPF(C#) 應用程式要與 Node.js 伺服器溝通。</li>
 <li>這邊紀錄了如何從 C# GET/POST 參數到伺服器以及伺服器端如何接收 GET/POST 過來的參數並回傳值。</li>
@@ -321,7 +321,7 @@
   </entry>
   <entry>
     <title>C# WPF TextBox 設定預設輸入法</title>
-    <url>/2020/08/04/2020-08-04-csharp-wpf-default-input/</url>
+    <url>/2020-08-04-csharp-wpf-default-input/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>工作上遇到登入視窗中帳號的 TextBox 預設輸入法是注音輸入法，但一般帳號是字母和數字的組合，希望可以預設改為英文輸入法。</li>
 <li>以前 WinForm 是透過 <code>KeyPress 事件</code>去判定 char 是否為字母或數字 <code>Char.IsLettrOrDigit(e.KeyChar)</code>，如果不是就用 <code>e.Handled = true;</code> 讓它無作用。</li>
@@ -346,7 +346,7 @@
   </entry>
   <entry>
     <title>C# WPF 抓圖遇到「伺服器認可通訊協定違規....」例外</title>
-    <url>/2020/08/06/2020-08-06-csharp-wpf-use-unsafe-header-parsing/</url>
+    <url>/2020-08-06-csharp-wpf-use-unsafe-header-parsing/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>雲端電子白板專案遇到向伺服器抓圖更新的時候，遇到 <code>「伺服器認可通訊協定違規. Section=ResponseStatusLine」</code> 的例外而報錯。</li>
 </ul>
@@ -377,7 +377,7 @@
   </entry>
   <entry>
     <title>C# WPF 除錯(Debug) 用的 Log 該如何寫？</title>
-    <url>/2020/08/10/2020-08-10-csharp-wpf-debug-log/</url>
+    <url>/2020-08-10-csharp-wpf-debug-log/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>軟體開發常常會遇到一些預想不到的 Bug，Debug 的方法有很多種，例如<code>加入中斷點</code>查看參數值有無異常、用<code>try&#123;...&#125;catch(Exception e)&#123; System.Console.WriteLine(e.Message);&#125;</code>印出錯誤訊息等等。</li>
 <li>但很多時候會遇到參數沒異常，甚至不會跳出任何錯誤訊息的時候，那要如何除錯呢？這時候就要根據 Log 去做分析、除錯、甚至做到能防呆，因為使用者不一定會按照我們的邏輯去操作。例如原本我們預期守規矩的使用者是先按了A才按B，但就是會有使用者直接去按B，結果導致出錯閃退，連錯誤訊息都看不到，這時基本防呆方法就是先讓B沒法按，按A後才能按B；又或者按B的時候程式先判斷是否按過A，按過A才繼續執行，沒按過就跳出提示。</li>
@@ -418,7 +418,7 @@
   </entry>
   <entry>
     <title>C# WPF 從 Resources 另存檔案</title>
-    <url>/2020/08/11/2020-08-11-csharp-wpf-copy-file-from-resource/</url>
+    <url>/2020-08-11-csharp-wpf-copy-file-from-resource/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li>白板專案上有個功能，是要從 Resources 複製一初始圖片檔案另存。</li>
 </ul>
@@ -439,8 +439,45 @@
       </tags>
   </entry>
   <entry>
+    <title>C# 更改專案名稱與組件名稱後，工作列上的應用程式名稱沒變</title>
+    <url>/2020-08-13-csharp-taskbar-appname-different/</url>
+    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
+<li><p>這是一個偶然發現的問題，身為工程師時常會開些小專案來試做，例如建一個叫 SampleAAA 的專案，其預設組件名稱/應用程式名稱也會叫做 SampleAAA，編譯後產生的執行檔也會叫 SampleAAA.exe。</p>
+</li>
+<li><p>當這個小專案測試沒問題，可能會想直接變更成正式專案，會考慮直接修改他的專案名稱、組件名稱、命名空間名稱，例如改叫 SampleBBB 好了。(其實蠻多地方需要修改的，這邊只列舉部分)</p>
+</li>
+<li><p>都改好後，清空 Debug 資料夾後，重新進行編譯，理所當然會產生 SampleBBB.exe，到這也沒問題。</p>
+</li>
+<li><p>發生問題的是，從 Debug 目錄下直接雙擊 SampleBBB.exe 後，又偶然在工作列(Taskbar)上對它的圖示點了右鍵，發現名稱還是原本的 SampleAAA，如下圖。</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/HOuA0zx.png" alt="名稱還是舊的"></p>
+<ul>
+<li>這讓我下意識的想到去搜尋看看登錄檔 ( 執行 &gt; 輸入<code>regedit</code> &gt; 搜尋 <code>SampleAAA</code>)，果然在 <code>HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\Shell\MuiCache</code> 下發現了一個有趣的東西 <code>FriendlyAppName</code> (友善的應用程式名稱？)。</li>
+</ul>
+<p><img src="https://i.imgur.com/35WmL1R.png" alt="FriendlyAppName"></p>
+<ul>
+<li>看來是微軟在初次運行執行檔的時候會記錄這個屬性，就算重新編譯，只要是路徑相同，都還是會保持原本的值。</li>
+</ul>
+<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><ul>
+<li><p>解決方法就是直接刪除這個機碼就可以了。</p>
+</li>
+<li><p>另外，其實如果把整個 Debug 資料夾搬到其他地方去執行，並不會有這問題，因為路徑不同。</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/wsh3aAD.png" alt="刪除就解決了"></p>
+]]></content>
+      <categories>
+        <category>Work</category>
+      </categories>
+      <tags>
+        <tag>C-Sharp</tag>
+        <tag>FriendlyAppName</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Node.js + MongoDB 增刪修查 (CRUD)</title>
-    <url>/2020/09/01/2020-09-01-javascript-mongodb-crud/</url>
+    <url>/2020-09-01-javascript-mongodb-crud/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
 <li><p>以往專案上以 Node.js 當 Server 的項目，大多搭配 MongoDB 使用，這裡紀錄一下從安裝到使用的筆記。</p>
 </li>
@@ -493,45 +530,8 @@
       </tags>
   </entry>
   <entry>
-    <title>C# 更改專案名稱與組件名稱後，工作列上的應用程式名稱沒變</title>
-    <url>/2020/08/13/2020-08-13-csharp-taskbar-appname-different/</url>
-    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li><p>這是一個偶然發現的問題，身為工程師時常會開些小專案來試做，例如建一個叫 SampleAAA 的專案，其預設組件名稱/應用程式名稱也會叫做 SampleAAA，編譯後產生的執行檔也會叫 SampleAAA.exe。</p>
-</li>
-<li><p>當這個小專案測試沒問題，可能會想直接變更成正式專案，會考慮直接修改他的專案名稱、組件名稱、命名空間名稱，例如改叫 SampleBBB 好了。(其實蠻多地方需要修改的，這邊只列舉部分)</p>
-</li>
-<li><p>都改好後，清空 Debug 資料夾後，重新進行編譯，理所當然會產生 SampleBBB.exe，到這也沒問題。</p>
-</li>
-<li><p>發生問題的是，從 Debug 目錄下直接雙擊 SampleBBB.exe 後，又偶然在工作列(Taskbar)上對它的圖示點了右鍵，發現名稱還是原本的 SampleAAA，如下圖。</p>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/HOuA0zx.png" alt="名稱還是舊的"></p>
-<ul>
-<li>這讓我下意識的想到去搜尋看看登錄檔 ( 執行 &gt; 輸入<code>regedit</code> &gt; 搜尋 <code>SampleAAA</code>)，果然在 <code>HKEY_CLASSES_ROOT\Local Settings\Software\Microsoft\Windows\Shell\MuiCache</code> 下發現了一個有趣的東西 <code>FriendlyAppName</code> (友善的應用程式名稱？)。</li>
-</ul>
-<p><img src="https://i.imgur.com/35WmL1R.png" alt="FriendlyAppName"></p>
-<ul>
-<li>看來是微軟在初次運行執行檔的時候會記錄這個屬性，就算重新編譯，只要是路徑相同，都還是會保持原本的值。</li>
-</ul>
-<h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><ul>
-<li><p>解決方法就是直接刪除這個機碼就可以了。</p>
-</li>
-<li><p>另外，其實如果把整個 Debug 資料夾搬到其他地方去執行，並不會有這問題，因為路徑不同。</p>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/wsh3aAD.png" alt="刪除就解決了"></p>
-]]></content>
-      <categories>
-        <category>Work</category>
-      </categories>
-      <tags>
-        <tag>C-Sharp</tag>
-        <tag>FriendlyAppName</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>廣告機-接駁車等待時間更新</title>
-    <url>/2020/07/10/2020-07-10-javascript-kiosk-bus-waiting-time/</url>
+    <url>/2020-07-10-javascript-kiosk-bus-waiting-time/</url>
     <content><![CDATA[<h2 id="任務說明"><a href="#任務說明" class="headerlink" title="任務說明"></a>任務說明</h2><ul>
 <li>最近接到任務，虎躍廠和頂埔廠廣告機顯示的接駁車路線整併更新案。</li>
 <li>紅藍線整成環廠線，成功線時刻也有異動，所以廣告機上的等待時間區塊需要更新。</li>
