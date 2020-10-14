@@ -165,6 +165,20 @@
 
   
   <url>
+    <loc>https://kusos.github.io/tags/C-Sharp/</loc>
+    <lastmod>2020-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kusos.github.io/tags/Pinyin/</loc>
+    <lastmod>2020-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://kusos.github.io/tags/JavaScript/</loc>
     <lastmod>2020-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -180,20 +194,6 @@
   
   <url>
     <loc>https://kusos.github.io/tags/MaskMap/</loc>
-    <lastmod>2020-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kusos.github.io/tags/C-Sharp/</loc>
-    <lastmod>2020-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://kusos.github.io/tags/Pinyin/</loc>
     <lastmod>2020-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
