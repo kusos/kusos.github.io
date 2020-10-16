@@ -345,6 +345,37 @@
       </tags>
   </entry>
   <entry>
+    <title>C# WPF 抓圖遇到「伺服器認可通訊協定違規....」例外</title>
+    <url>/2020-08-06-csharp-wpf-use-unsafe-header-parsing/</url>
+    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
+<li>雲端電子白板專案遇到向伺服器抓圖更新的時候，遇到 <code>「伺服器認可通訊協定違規. Section=ResponseStatusLine」</code> 的例外而報錯。</li>
+</ul>
+<p><img src="https://i.imgur.com/MyA6Bok.png" alt="伺服器認可通訊協定違規"></p>
+<ul>
+<li>請示 Google 大神後，找到解決的方式是在 Web.Config 或 App.Config 裡面加上下面這串設定值，也就是要設定 <code>useUnsafeHeaderParsing=&quot;true&quot;</code>。</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.net</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">httpWebRequest</span> <span class="attr">useUnsafeHeaderParsing</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.net</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>But… WPF 似乎沒有 App.Config 這個檔案，如果是透過程式動態設定，就如下：</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Configuration;</span><br><span class="line"><span class="keyword">using</span> System.Net.Configuration;</span><br><span class="line"><span class="comment">// System.Configuration.dll 記得加入參考</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Window_Loaded</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="comment">//解決「伺服器認可通訊協定違規. Section=...」問題</span></span><br><span class="line">            <span class="keyword">var</span> config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);</span><br><span class="line">            <span class="keyword">var</span> settings = (SettingsSection)config.GetSection(<span class="string">&quot;system.net/settings&quot;</span>);</span><br><span class="line">            settings.HttpWebRequest.UseUnsafeHeaderParsing = <span class="literal">true</span>;</span><br><span class="line">            config.Save(ConfigurationSaveMode.Modified);</span><br><span class="line">            ConfigurationManager.RefreshSection(<span class="string">&quot;system.net/settings&quot;</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>編譯後可發現會產生 <code>appname.vshost.exe.Config</code> 這個檔案，將其複製一份，更名為 <code>appname.exe.Config</code> 即可，內容其實跟前面的 xml 是一樣的。</p>
+</li>
+<li><p>註： appname 就是你自己的專案名稱/應用程式名稱。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Work</category>
+      </categories>
+      <tags>
+        <tag>C-Sharp</tag>
+        <tag>WPF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>C# WPF 除錯(Debug) 用的 Log 該如何寫？</title>
     <url>/2020-08-10-csharp-wpf-debug-log/</url>
     <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
@@ -376,37 +407,6 @@
 </li>
 </ul>
 <p><img src="https://i.imgur.com/ODDQWWl.png" alt="Prepend"></p>
-]]></content>
-      <categories>
-        <category>Work</category>
-      </categories>
-      <tags>
-        <tag>C-Sharp</tag>
-        <tag>WPF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C# WPF 抓圖遇到「伺服器認可通訊協定違規....」例外</title>
-    <url>/2020-08-06-csharp-wpf-use-unsafe-header-parsing/</url>
-    <content><![CDATA[<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><ul>
-<li>雲端電子白板專案遇到向伺服器抓圖更新的時候，遇到 <code>「伺服器認可通訊協定違規. Section=ResponseStatusLine」</code> 的例外而報錯。</li>
-</ul>
-<p><img src="https://i.imgur.com/MyA6Bok.png" alt="伺服器認可通訊協定違規"></p>
-<ul>
-<li>請示 Google 大神後，找到解決的方式是在 Web.Config 或 App.Config 裡面加上下面這串設定值，也就是要設定 <code>useUnsafeHeaderParsing=&quot;true&quot;</code>。</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">system.net</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">httpWebRequest</span> <span class="attr">useUnsafeHeaderParsing</span>=<span class="string">&quot;true&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">system.net</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>But… WPF 似乎沒有 App.Config 這個檔案，如果是透過程式動態設定，就如下：</li>
-</ul>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Configuration;</span><br><span class="line"><span class="keyword">using</span> System.Net.Configuration;</span><br><span class="line"><span class="comment">// System.Configuration.dll 記得加入參考</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Window_Loaded</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            <span class="comment">//解決「伺服器認可通訊協定違規. Section=...」問題</span></span><br><span class="line">            <span class="keyword">var</span> config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);</span><br><span class="line">            <span class="keyword">var</span> settings = (SettingsSection)config.GetSection(<span class="string">&quot;system.net/settings&quot;</span>);</span><br><span class="line">            settings.HttpWebRequest.UseUnsafeHeaderParsing = <span class="literal">true</span>;</span><br><span class="line">            config.Save(ConfigurationSaveMode.Modified);</span><br><span class="line">            ConfigurationManager.RefreshSection(<span class="string">&quot;system.net/settings&quot;</span>);</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>編譯後可發現會產生 <code>appname.vshost.exe.Config</code> 這個檔案，將其複製一份，更名為 <code>appname.exe.Config</code> 即可，內容其實跟前面的 xml 是一樣的。</p>
-</li>
-<li><p>註： appname 就是你自己的專案名稱/應用程式名稱。</p>
-</li>
-</ul>
 ]]></content>
       <categories>
         <category>Work</category>
