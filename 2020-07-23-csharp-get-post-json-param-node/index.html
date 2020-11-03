@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mikeknow.gitlab.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"kusos.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="紀錄 C# 要如何與 Node.js 相互傳值溝通">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# GET&#x2F;POST JSON&#x2F;Param to Node.js">
-<meta property="og:url" content="https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/index.html">
+<meta property="og:url" content="https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/index.html">
 <meta property="og:site_name" content="麥克的筆記本">
 <meta property="og:description" content="紀錄 C# 要如何與 Node.js 相互傳值溝通">
 <meta property="og:locale" content="zh_TW">
@@ -38,7 +38,7 @@
 <meta property="article:tag" content="Param">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/">
+<link rel="canonical" href="https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/">
 
 
 <script id="page-configurations">
@@ -202,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/">
+    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -299,7 +299,7 @@
 
 <h2 id="Node-js-端"><a href="#Node-js-端" class="headerlink" title="Node.js 端"></a>Node.js 端</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 application/json parser</span></span><br><span class="line"><span class="keyword">var</span> jsonParser = bodyParser.json();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 建立 application/x-www-form-urlencoded parser</span></span><br><span class="line"><span class="keyword">var</span> urlencodedParser = bodyParser.urlencoded(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//GET 接受參數，使用 req.query.xxx</span></span><br><span class="line">app.get(<span class="string">&#x27;/checkGet&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.query.name, req.query.pw);</span><br><span class="line"></span><br><span class="line">  res.send(<span class="string">&quot;收到 GET 資料啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以 JSON 傳來的用 jsonParser</span></span><br><span class="line">app.post(<span class="string">&#x27;/checkJson&#x27;</span>, jsonParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.body.name, req.body.pw);</span><br><span class="line">  res.send(<span class="string">&quot;收到 POST 來的 JSON 啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//以 x-www-form-urlencoded 傳來的用 urlencodedParser</span></span><br><span class="line">app.post(<span class="string">&#x27;/checkParam&#x27;</span>, urlencodedParser, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(req.body.name, req.body.pw);</span><br><span class="line">  res.send(<span class="string">&quot;收到 POST 來的 x-www-form-urlencoded 啦&quot;</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> port = <span class="number">8080</span>;</span><br><span class="line"></span><br><span class="line">server.listen(port, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Express started on http://localhost:&#x27;</span> + port + <span class="string">&#x27; \r\npress Ctrl+C to terminate.&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/'></iframe>
+        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/'></iframe>
     </div>
 
     
@@ -314,7 +314,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>文章連結：</strong>
-    <a href="https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/" title="C# GET&#x2F;POST JSON&#x2F;Param to Node.js">https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/</a>
+    <a href="https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/" title="C# GET&#x2F;POST JSON&#x2F;Param to Node.js">https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -614,7 +614,7 @@ window.addEventListener('pjax:success', () => {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://mikeknow.gitlab.io/2020-07-23-csharp-get-post-json-param-node/";
+    this.page.url = "https://kusos.github.io/2020-07-23-csharp-get-post-json-param-node/";
     this.page.identifier = "2020-07-23-csharp-get-post-json-param-node/";
     this.page.title = "C# GET/POST JSON/Param to Node.js";
     };

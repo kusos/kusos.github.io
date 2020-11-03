@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mikeknow.gitlab.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"kusos.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="如何在 C# 中利用 cmd 語法重新啟動程式？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# 利用 cmd 重新啟動">
-<meta property="og:url" content="https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/index.html">
+<meta property="og:url" content="https://kusos.github.io/2020-07-23-csharp-cmd-restart/index.html">
 <meta property="og:site_name" content="麥克的筆記本">
 <meta property="og:description" content="如何在 C# 中利用 cmd 語法重新啟動程式？">
 <meta property="og:locale" content="zh_TW">
@@ -34,7 +34,7 @@
 <meta property="article:tag" content="CMD">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/">
+<link rel="canonical" href="https://kusos.github.io/2020-07-23-csharp-cmd-restart/">
 
 
 <script id="page-configurations">
@@ -198,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/">
+    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020-07-23-csharp-cmd-restart/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -284,7 +284,7 @@
 <li>目前專案 WPF 程式有個重新啟動的需求，可利用 CMD 的方式達成。</li>
 </ul>
 <h2 id="WPF-端"><a href="#WPF-端" class="headerlink" title="WPF 端"></a>WPF 端</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">btnRestart_Click</span>(<span class="params"><span class="keyword">object</span> sender, RoutedEventArgs e</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            ProcessStartInfo Info = <span class="keyword">new</span> ProcessStartInfo();</span><br><span class="line">            Info.Arguments = <span class="string">&quot;/C choice /C Y /N /D Y /T 1 &amp; START \&quot;\&quot; \&quot;&quot;</span> + Application.ResourceAssembly.Location + <span class="string">&quot;\&quot;&quot;</span>;</span><br><span class="line">            Info.WindowStyle = ProcessWindowStyle.Hidden;</span><br><span class="line">            Info.CreateNoWindow = <span class="literal">true</span>;</span><br><span class="line">            Info.FileName = <span class="string">&quot;cmd.exe&quot;</span>;</span><br><span class="line">            Process.Start(Info);</span><br><span class="line">            Process.GetCurrentProcess().Kill();</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/'></iframe>
+        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://kusos.github.io/2020-07-23-csharp-cmd-restart/'></iframe>
     </div>
 
     
@@ -299,7 +299,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>文章連結：</strong>
-    <a href="https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/" title="C# 利用 cmd 重新啟動">https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/</a>
+    <a href="https://kusos.github.io/2020-07-23-csharp-cmd-restart/" title="C# 利用 cmd 重新啟動">https://kusos.github.io/2020-07-23-csharp-cmd-restart/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -595,7 +595,7 @@ window.addEventListener('pjax:success', () => {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://mikeknow.gitlab.io/2020-07-23-csharp-cmd-restart/";
+    this.page.url = "https://kusos.github.io/2020-07-23-csharp-cmd-restart/";
     this.page.identifier = "2020-07-23-csharp-cmd-restart/";
     this.page.title = "C# 利用 cmd 重新啟動";
     };
