@@ -17,13 +17,13 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"kusos.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mikeknow.gitlab.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="要如何從 Resources 中把檔案拷貝出來呢？">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C# WPF 從 Resources 另存檔案">
-<meta property="og:url" content="https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/index.html">
+<meta property="og:url" content="https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/index.html">
 <meta property="og:site_name" content="麥克的筆記本">
 <meta property="og:description" content="要如何從 Resources 中把檔案拷貝出來呢？">
 <meta property="og:locale" content="zh_TW">
@@ -37,7 +37,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.imgur.com/SkubYQj.png">
 
-<link rel="canonical" href="https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/">
+<link rel="canonical" href="https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/">
 
 
 <script id="page-configurations">
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/">
+    <link itemprop="mainEntityOfPage" href="https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -294,7 +294,7 @@
 <p><img src="https://i.imgur.com/jcadM4Z.png" alt="File.WriteAllBytes說明"></p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我的文件夾下以專案 Title 建立的資料夾</span></span><br><span class="line"><span class="keyword">string</span> SaveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + <span class="string">&quot;\\&quot;</span> + <span class="keyword">this</span>.Title + <span class="string">&quot;\\&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//確保該目錄存在</span></span><br><span class="line"><span class="keyword">if</span> (Directory.Exists(SaveFolder) == <span class="literal">false</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123; Directory.CreateDirectory(SaveFolder); &#125;</span><br><span class="line">                <span class="keyword">catch</span> &#123; &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//將資源圖片另存</span></span><br><span class="line">File.WriteAllBytes(SaveFolder + <span class="string">&quot;Whiteboard.jpg&quot;</span>, BitmapToBytes(Properties.Resources.Whiteboard));</span><br><span class="line"></span><br><span class="line"><span class="comment">//型別轉換</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] <span class="title">BitmapToBytes</span>(<span class="params">System.Drawing.Bitmap Bitmap</span>)</span></span><br><span class="line"><span class="function"></span>        &#123;</span><br><span class="line">            MemoryStream ms = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">try</span></span><br><span class="line">            &#123;</span><br><span class="line">                ms = <span class="keyword">new</span> MemoryStream();</span><br><span class="line">                Bitmap.Save(ms, Bitmap.RawFormat);</span><br><span class="line">                <span class="keyword">byte</span>[] byteImage = <span class="keyword">new</span> Byte[ms.Length];</span><br><span class="line">                byteImage = ms.ToArray();</span><br><span class="line">                <span class="keyword">return</span> byteImage;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">catch</span> (ArgumentNullException ex)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">throw</span> ex;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">finally</span></span><br><span class="line">            &#123;</span><br><span class="line">                ms.Close();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br></pre></td></tr></table></figure>
 
-        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/'></iframe>
+        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/'></iframe>
     </div>
 
     
@@ -309,7 +309,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>文章連結：</strong>
-    <a href="https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/" title="C# WPF 從 Resources 另存檔案">https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/</a>
+    <a href="https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/" title="C# WPF 從 Resources 另存檔案">https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
@@ -605,7 +605,7 @@ window.addEventListener('pjax:success', () => {
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://kusos.github.io/2020-08-11-csharp-wpf-copy-file-from-resource/";
+    this.page.url = "https://mikeknow.gitlab.io/2020-08-11-csharp-wpf-copy-file-from-resource/";
     this.page.identifier = "2020-08-11-csharp-wpf-copy-file-from-resource/";
     this.page.title = "C# WPF 從 Resources 另存檔案";
     };
