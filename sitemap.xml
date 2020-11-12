@@ -235,7 +235,7 @@
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/ini/</loc>
+    <loc>https://blog2.mikeknow.com/tags/IIS/</loc>
     <lastmod>2020-11-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -249,13 +249,6 @@
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/IIS/</loc>
-    <lastmod>2020-11-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog2.mikeknow.com/tags/QRCode/</loc>
     <lastmod>2020-11-12</lastmod>
     <changefreq>daily</changefreq>
@@ -263,7 +256,14 @@
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/Cursor/</loc>
+    <loc>https://blog2.mikeknow.com/tags/ini/</loc>
+    <lastmod>2020-11-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/NodeJS/</loc>
     <lastmod>2020-11-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -277,7 +277,7 @@
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/NodeJS/</loc>
+    <loc>https://blog2.mikeknow.com/tags/Cursor/</loc>
     <lastmod>2020-11-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -389,6 +389,13 @@
   </url>
   
   <url>
+    <loc>https://blog2.mikeknow.com/tags/CMD/</loc>
+    <lastmod>2020-11-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog2.mikeknow.com/tags/GET/</loc>
     <lastmod>2020-11-12</lastmod>
     <changefreq>daily</changefreq>
@@ -411,13 +418,6 @@
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Param/</loc>
-    <lastmod>2020-11-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/CMD/</loc>
     <lastmod>2020-11-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
