@@ -20,18 +20,28 @@
     var CONFIG = {"hostname":"blog2.mikeknow.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":"default","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="這裡主要紀錄一些學習筆記與小技巧，包含網站開發、Android、SQL等各種工作上遇到的問題與解決方案。甚至還包含了遊戲攻略，除了可以方便自己日後查閱外，也希望可以幫助到各位。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="麥克的筆記本">
-<meta property="og:url" content="https://blog2.mikeknow.com/tags/C-Sharp/page/2/index.html">
+  <meta name="description" content="Notepad++ 預設沒有針對 Markdown 設計語法高亮，要如何實現呢？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notepad++ Markdown 語法高亮">
+<meta property="og:url" content="https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/index.html">
 <meta property="og:site_name" content="麥克的筆記本">
-<meta property="og:description" content="這裡主要紀錄一些學習筆記與小技巧，包含網站開發、Android、SQL等各種工作上遇到的問題與解決方案。甚至還包含了遊戲攻略，除了可以方便自己日後查閱外，也希望可以幫助到各位。">
+<meta property="og:description" content="Notepad++ 預設沒有針對 Markdown 設計語法高亮，要如何實現呢？">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i.imgur.com/2wiBopZ.png">
+<meta property="og:image" content="https://i.imgur.com/Yk2dDks.png">
+<meta property="og:image" content="https://i.imgur.com/sorvyyd.png">
+<meta property="og:image" content="https://i.imgur.com/0tWOulb.png">
+<meta property="og:image" content="https://i.imgur.com/6t0kPwP.png">
+<meta property="og:image" content="https://i.imgur.com/iHdfo25.png">
+<meta property="article:published_time" content="2020-11-13T02:37:19.000Z">
+<meta property="article:modified_time" content="2020-11-13T06:36:52.157Z">
 <meta property="article:author" content="Mike Chen">
-<meta property="article:tag" content="麥克的筆記本,Mike&#39;s Notes,程式開發,遊戲攻略,理財,投資">
+<meta property="article:tag" content="Notepad++">
+<meta property="article:tag" content="Markdown">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/2wiBopZ.png">
 
-<link rel="canonical" href="https://blog2.mikeknow.com/tags/C-Sharp/page/2/">
+<link rel="canonical" href="https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/">
 
 
 <script id="page-configurations">
@@ -39,12 +49,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>標籤: C-Sharp | 麥克的筆記本</title>
+  <title>Notepad++ Markdown 語法高亮 | 麥克的筆記本</title>
   
 
 
@@ -188,200 +198,182 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Mike Chen">
+      <meta itemprop="description" content="這裡主要紀錄一些學習筆記與小技巧，包含網站開發、Android、SQL等各種工作上遇到的問題與解決方案。甚至還包含了遊戲攻略，除了可以方便自己日後查閱外，也希望可以幫助到各位。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="麥克的筆記本">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Notepad++ Markdown 語法高亮
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-11-13 10:37:19 / 修改時間：14:36:52" itemprop="dateCreated datePublished" datetime="2020-11-13T10:37:19+08:00">2020-11-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tips/" itemprop="url" rel="index"><span itemprop="name">Tips</span></a>
+                </span>
+            </span>
+
+          
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">C-Sharp
-          <small>標籤</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020-11-13-markdown-syntax-highlighting-for-notepad++/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020-11-13-markdown-syntax-highlighting-for-notepad++/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">文章字數：</span>
+              <span>458</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+              <span>1 分鐘</span>
+            </span>
+            <div class="post-description">Notepad++ 預設沒有針對 Markdown 設計語法高亮，要如何實現呢？</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2019</span>
+        <h2 id="問題"><a href="#問題" class="headerlink" title="問題"></a>問題</h2><ul>
+<li><p>Notepad++ 是個不錯的文字編輯軟件，因為它支援大多數程式語言的語法高亮，所以有時候單純看程式碼沒有要編輯的時候，也會利用它快速開啟查看。</p>
+</li>
+<li><p>不過它預設沒有針對 Markdown (副檔名為 md) 設計語法高亮，那要如何實現呢？</p>
+</li>
+</ul>
+<h2 id="下載"><a href="#下載" class="headerlink" title="下載"></a>下載</h2><ul>
+<li><p>前往 <a target="_blank" rel="noopener" href="https://github.com/Edditoria/markdown-plus-plus">Markdown Syntax Highlighting for Notepad++</a></p>
+</li>
+<li><p>點選 Code &gt; Download ZIP，下載壓縮檔</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/2wiBopZ.png" alt="下載壓縮檔"></p>
+<ul>
+<li>解壓後得到名為 markdown-plus-plus-master 資料夾，在 udl 目錄下可以看到多種 Markdown 的語法高亮設定檔案</li>
+</ul>
+<p><img src="https://i.imgur.com/Yk2dDks.png" alt="Markdown設定檔"></p>
+<ul>
+<li>回到 Notepad++，點選 <code>語言 &gt; 自訂程式語言 &gt; 開啟自訂語言資料夾</code>。以我為例的話，目錄是在 <code>C:\Users\Mike\AppData\Roaming\Notepad++\userDefineLangs\</code></li>
+</ul>
+<p><img src="https://i.imgur.com/sorvyyd.png" alt="開啟自訂語言資料夾"></p>
+<ul>
+<li>將剛剛 udl 目錄下的設定檔複製到自訂語言資料夾下</li>
+</ul>
+<p><img src="https://i.imgur.com/0tWOulb.png" alt="複製設定檔"></p>
+<ul>
+<li>重新啟動 Notepad++，點選 <code>語言 </code> 可在最下方看到多出數個 Markdown 的選項，挑一個看得順眼的吧！</li>
+</ul>
+<p><img src="https://i.imgur.com/6t0kPwP.png" alt="Markdown選項出現了"></p>
+<ul>
+<li>例如我選 Markdown (Bespin)，就會如下效果。</li>
+</ul>
+<p><img src="https://i.imgur.com/iHdfo25.png" alt="Markdown-Bespin"></p>
+
+        <iframe scrolling='no' frameborder='0' sandbox='allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-storage-access-by-user-activation' style='height: 212px; width: 100%;' src='https://button.like.co/in/embed/mike2007-cv96g/button?referrer=https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/'></iframe>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-06T10:37:19+08:00"
-              content="2019-09-06">
-          09-06
-        </time>
-      </div>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>作者： </strong>Mike Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>文章連結：</strong>
+    <a href="https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/" title="Notepad++ Markdown 語法高亮">https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版權聲明： </strong>本網誌所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh_TW" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 許可協議。轉載請註明出處！
+  </li>
+</ul>
+</div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-09-06-csharp-wpf-image-cursor/" itemprop="url">
-            <span itemprop="name">C# WPF 自訂滑鼠圖示實作板擦功能</span>
-          </a>
-      </div>
 
-    </header>
-  </article>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Notepad/" rel="tag"># Notepad++</a>
+              <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-09-05T10:37:19+08:00"
-              content="2019-09-05">
-          09-05
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-09-05-csharp-wpf-delay-run/" itemprop="url">
-            <span itemprop="name">C# WPF 延遲幾秒後執行</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-04-16T10:37:19+08:00"
-              content="2019-04-16">
-          04-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-04-16-csharp-wpf-clock/" itemprop="url">
-            <span itemprop="name">C# WPF 電子時鐘、碼表、試用提示</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-04-08T10:37:19+08:00"
-              content="2019-04-08">
-          04-08
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-04-08-csharp-wpf-windows-cursor/" itemprop="url">
-            <span itemprop="name">C# WPF Windwos 內建鼠標切換</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-04-01T10:37:19+08:00"
-              content="2019-04-01">
-          04-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-04-01-csharp-wpf-gif/" itemprop="url">
-            <span itemprop="name">C# WPF 加入 GIF 動畫圖檔</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-01-10T10:37:19+08:00"
-              content="2019-01-10">
-          01-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-01-10-csharp-wpf-ini-read-save/" itemprop="url">
-            <span itemprop="name">C# WPF ini 設定檔讀寫</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-01-10T10:37:19+08:00"
-              content="2019-01-10">
-          01-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-01-10-csharp-wpf-upload-to-nodejs-server/" itemprop="url">
-            <span itemprop="name">C# WPF 上傳檔案至 Node.js Server 並產生 QRCode</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-01-09T10:37:19+08:00"
-              content="2019-01-09">
-          01-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2019-01-09-csharp-wpf-upload-to-iis-server/" itemprop="url">
-            <span itemprop="name">C# WPF 上傳檔案至 IIS Server 並產生 QRCode</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020-11-12-google-photos/" rel="prev" title="Google 宣布將在 2021 年 6 月終止相簿的無限儲存空間，有替代方案？">
+      <i class="fa fa-chevron-left"></i> Google 宣布將在 2021 年 6 月終止相簿的無限儲存空間，有替代方案？
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-  </div>
+      </footer>
+    
+  </article>
   
   
   
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/tags/C-Sharp/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/tags/C-Sharp/">1</a><span class="page-number current">2</span>
-  </nav>
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -428,6 +420,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%8F%E9%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">問題</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89"><span class="nav-number">2.</span> <span class="nav-text">下載</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -627,6 +620,26 @@ window.addEventListener('pjax:success', () => {
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/";
+    this.page.identifier = "2020-11-13-markdown-syntax-highlighting-for-notepad++/";
+    this.page.title = "Notepad++ Markdown 語法高亮";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mikechen2018.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
     </div>
