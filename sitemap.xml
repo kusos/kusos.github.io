@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/</loc>
+    <loc>https://blog2.mikeknow.com/2020-11-18-chrome-extension-desktop-capture/</loc>
     
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/2020-11-18-chrome-extension-basic/</loc>
+    
+    <lastmod>2020-11-18</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/2020-11-12-google-photos/</loc>
     
-    <lastmod>2020-11-12</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/2020-11-13-markdown-syntax-highlighting-for-notepad++/</loc>
+    
+    <lastmod>2020-11-13</lastmod>
     
   </url>
   
@@ -228,7 +242,7 @@
 
   <url>
     <loc>https://blog2.mikeknow.com/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -236,231 +250,259 @@
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/C-Sharp/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/IIS/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/WPF/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/QRCode/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/ini/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/NodeJS/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/WPF/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/QRCode/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/GIF/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/IIS/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/ini/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Cursor/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/JavaScript/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/leaflet/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/MaskMap/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Pinyin/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/Vue/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <loc>https://blog2.mikeknow.com/tags/JavaScript/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/Firebase/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <loc>https://blog2.mikeknow.com/tags/leaflet/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/MaskMap/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Baby/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/EJ2/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Animation/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/WinForm/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Electronic-Whiteboard/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/TOUCH/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/MOUSE/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/KIOSK/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Digital-Signage/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/CMD/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/GET/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/POST/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/JSON/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Param/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog2.mikeknow.com/tags/FriendlyAppName/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <loc>https://blog2.mikeknow.com/tags/Vue/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/Firebase/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/MongoDB/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/tags/Google-Photos/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Notepad/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/tags/Markdown/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/FriendlyAppName/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/Chrome-extension/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/Chrome%E6%93%B4%E5%B1%95%E5%A4%96%E6%8E%9B/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/Chrome%E6%93%B4%E5%85%85%E5%8A%9F%E8%83%BD/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96/</loc>
+    <lastmod>2020-11-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog2.mikeknow.com/tags/Google-Photos/</loc>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -469,35 +511,28 @@
   
   <url>
     <loc>https://blog2.mikeknow.com/categories/Work/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/categories/Side-Project/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/categories/Baby/</loc>
-    <lastmod>2020-11-13</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog2.mikeknow.com/categories/Info/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog2.mikeknow.com/categories/Tips/</loc>
-    <lastmod>2020-11-13</lastmod>
+    <lastmod>2020-11-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
